@@ -30,6 +30,7 @@ public class Library {
 	}
 	
 	public String returnBook() {
+		int i= 10/0;
 		System.out.println("returnBook()");
 		return "Book name";
 		
