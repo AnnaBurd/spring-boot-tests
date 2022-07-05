@@ -3,6 +3,7 @@ package my.anna.springdemo.aop;
 import java.util.List;
 
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Aspect;
@@ -73,5 +74,11 @@ public class LoggingAspect {
 		returnedStudents.add(new Student("sdfsd", 34,2));
 		
 		System.out.println();
+	}
+	
+	// After advice is triggered after successful and not successful method return, but before actual error is thrown
+	@After(value = "Pointcuts.allGetMethods()")
+	public void afterFinallyAdvice() {
+		System.out.println("Advice afterFinallyAdvice()");
 	}
 }
