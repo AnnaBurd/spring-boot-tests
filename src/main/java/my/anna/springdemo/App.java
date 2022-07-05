@@ -32,10 +32,12 @@ public class App
 //		
 //		List<Student> students = university.getStudents();
 //		System.out.println(students);
+
 		
-		Library myLib = context.getBean("libraryBean", Library.class);
-		String bookName = myLib.returnBook();
-		System.out.println("Book: " + bookName);
+		
+//		Library myLib = context.getBean("libraryBean", Library.class);
+//		String bookName = myLib.returnBook();
+//		System.out.println("Book: " + bookName);
 		
 		
 		context.close();
