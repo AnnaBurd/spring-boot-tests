@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.AfterReturning;
+import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.reflect.MethodSignature;
@@ -47,6 +48,20 @@ public class LoggingAspect {
 		System.out.println("Advice beforeGetAdvice()");
 	}
 	
+	
+//	@AfterThrowing("Pointcuts.allGetMethods()")
+//	public void afterThrowAdvice() {
+//		System.out.println("Advice afterThrowAdvice()");
+//	}
+	
+	@AfterThrowing(value = "Pointcuts.allGetMethods()", throwing = "exception")
+	public void afterThrowAdvice(Exception exception) {
+		System.out.println("Advice afterThrowAdvice()");
+		System.out.println(exception.getMessage());
+	}
+	
+	
+	
 	// After returning advice catches return value and allows to change it
 	@AfterReturning(value ="Pointcuts.allGetMethods()", returning =  "returnValue")
 	public void afterGetAdvice(JoinPoint joinPoint, Object returnValue) { // List<Student> returnValue also works
@@ -58,10 +73,5 @@ public class LoggingAspect {
 		returnedStudents.add(new Student("sdfsd", 34,2));
 		
 		System.out.println();
-		
-		
 	}
-	
-	
-
 }
