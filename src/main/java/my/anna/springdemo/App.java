@@ -1,5 +1,7 @@
 package my.anna.springdemo;
 
+import java.util.List;
+
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
@@ -17,9 +19,20 @@ public class App
 		
 		
 		
-		Library myLib = context.getBean("libraryBean", Library.class);
+//		Library myLib = context.getBean("libraryBean", Library.class);
+//		
+//		myLib.getBook();
+//		myLib.getJournal();
+//		myLib.addBook("randname", context.getBean("book", Book.class));
+//		myLib.addJournal();
 		
-		myLib.getBook();
-		myLib.getJournal();
+		// Get bean from context by name
+		University university = context.getBean("university", University.class);
+		university.addStudents();
+		
+		List<Student> students = university.getStudents();
+		System.out.println(students);
+		
+		context.close();
 	}
 }
