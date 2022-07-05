@@ -28,4 +28,10 @@ public class Library {
 		System.out.println("Library: add journal");
 		System.out.println("--------------------------------------------------");
 	}
+	
+	public String returnBook() {
+		System.out.println("returnBook()");
+		return "Book name";
+		
+	}
 }

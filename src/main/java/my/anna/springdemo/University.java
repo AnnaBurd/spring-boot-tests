@@ -29,13 +29,13 @@ public class University {
 	public List<Student> getStudents(){
 		System.out.println("University: get students");
 		
-		System.out.println(students.get(3));
+//		System.out.println(students.get(3));
 		
-//		try {
-//			System.out.println(students.get(3));
-//		} catch (Exception e) {
-//			System.out.println("Try-catch get students");
-//		}
+		try {
+			System.out.println(students.get(3));
+		} catch (Exception e) {
+			System.out.println("Try-catch get students");
+		}
 		
 		System.out.println(students);
 		System.out.println("--------------------------------------------------");

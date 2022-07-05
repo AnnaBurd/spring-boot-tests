@@ -12,7 +12,7 @@ public class App
 {
 	public static void main( String[] args )
 	{
-		System.out.println( "Hello World!" );
+//		System.out.println( "Hello World!" );
 
 		AnnotationConfigApplicationContext context = 
 				new AnnotationConfigApplicationContext(MyConfig.class);
@@ -26,13 +26,19 @@ public class App
 //		myLib.addBook("randname", context.getBean("book", Book.class));
 //		myLib.addJournal();
 		
-		// Get bean from context by name
-		University university = context.getBean("university", University.class);
-		university.addStudents();
+//		// Get bean from context by name
+//		University university = context.getBean("university", University.class);
+//		university.addStudents();
+//		
+//		List<Student> students = university.getStudents();
+//		System.out.println(students);
 		
-		List<Student> students = university.getStudents();
-		System.out.println(students);
+		Library myLib = context.getBean("libraryBean", Library.class);
+		String bookName = myLib.returnBook();
+		System.out.println("Book: " + bookName);
+		
 		
 		context.close();
+		System.out.println("Main: end");
 	}
 }

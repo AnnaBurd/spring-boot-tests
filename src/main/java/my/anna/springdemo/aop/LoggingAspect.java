@@ -76,7 +76,7 @@ public class LoggingAspect {
 		System.out.println();
 	}
 	
-	// After advice is triggered after successful and not successful method return, but before actual error is thrown
+	// After advice is triggered after successful and not successful method return, before actual error is thrown
 	@After(value = "Pointcuts.allGetMethods()")
 	public void afterFinallyAdvice() {
 		System.out.println("Advice afterFinallyAdvice()");
