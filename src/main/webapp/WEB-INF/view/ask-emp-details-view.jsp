@@ -62,6 +62,11 @@
 		Phone number
 	<form:input path="phoneNumber"/>
 	<form:errors path="phoneNumber"/>
+	
+	<br><br>
+			Email
+	<form:input path="mail"/>
+	<form:errors path="mail"/>
 				
 		<br>
 		<input type="submit" value = "save my data">

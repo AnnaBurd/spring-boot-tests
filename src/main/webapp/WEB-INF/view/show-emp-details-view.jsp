@@ -34,6 +34,7 @@
 		</ul>
 		 
 					<p> Your phone: ${employeeAttribute.phoneNumber} </p>
+					<p> Your mail: ${employeeAttribute.mail} </p>
 	<br>
 
 	<br>

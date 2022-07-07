@@ -21,6 +21,7 @@ import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import my.anna.springdemo.mvc.validation.CheckEmail;
 
 @NoArgsConstructor
 @RequiredArgsConstructor
@@ -51,6 +52,10 @@ public class Employee {
 	
 	@Pattern(regexp="\\d{3}-\\d{2}-\\d{2}", message="must be a phone number xxx-xx-xx")
 	private String phoneNumber;
+	
+	//@CheckEmail
+	@CheckEmail(value="@123", message="alala email checks")
+	private String mail;
 	
 	private String level;
 	
