@@ -12,15 +12,28 @@
 
 	<h3>Enter new employee details:</h3>
 
+
+
 	<form:form action="saveNewEmployee" modelAttribute="newEmpAttr">
+
+		<form:hidden path="id" />
+		<!--  hidden form to transfer id for update method -->
 	
-	Name<form:input path="name"/><br><br>
-	surname<form:input path="surname"/><br><br>
-	department<form:input path="department"/><br><br>
-	salary<form:input path="salary"/><br><br>
-	
-	<input type="submit" value = "save to database">
-	
+	Name<form:input path="name" />
+		<br>
+		<br>
+	surname<form:input path="surname" />
+		<br>
+		<br>
+	department<form:input path="department" />
+		<br>
+		<br>
+	salary<form:input path="salary" />
+		<br>
+		<br>
+
+		<input type="submit" value="save to database">
+
 	</form:form>
 
 

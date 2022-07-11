@@ -29,4 +29,10 @@ public class MyEmpServiceImpl implements MyEmpService {
 		
 	}
 
+	@Override
+	@Transactional
+	public Emp getEmployee(int id) {
+		return empDAO.getEmployee(id);
+	}
+
 }

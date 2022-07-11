@@ -9,5 +9,7 @@ public interface MyEmpService {
 	public List<Emp> getAllEmployees();
 
 	public void saveEmployee(Emp newEmp);
+	
+	public Emp getEmployee(int id);
 
 }

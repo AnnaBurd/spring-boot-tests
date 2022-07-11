@@ -43,8 +43,21 @@ public class EmpDAOImpl implements EmpDAO{
 		
 		Session session = sessionFactory.getCurrentSession();
 		
-		session.save(newEmp);
+		//session.save(newEmp);
 		
+		session.saveOrUpdate(newEmp); // Manage save or update on the database level, not in the controller
+		
+	}
+
+	@Override
+	public Emp getEmployee(int id) {
+
+
+		Session session = sessionFactory.getCurrentSession();
+		
+		//return session.find(Emp.class, id);
+		return session.get(Emp.class, id);
+
 	}
 
 }

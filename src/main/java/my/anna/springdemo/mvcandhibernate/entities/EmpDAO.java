@@ -8,4 +8,6 @@ public interface EmpDAO {
 
 	public void saveEmployee(Emp newEmp);
 
+	public Emp getEmployee(int id);
+
 }

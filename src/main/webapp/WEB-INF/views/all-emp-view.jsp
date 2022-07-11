@@ -16,14 +16,24 @@
 			<th>Surname</th>
 			<th>Department</th>
 			<th>Salary</th>
+			<td>Operations</td>
 		</tr>
 
 		<c:forEach var="tempEmp" items="${allEmpAttr}">
+
+			<c:url var="empUpdateLink" value="/myEmpApp/updateDetailsEmployee">
+
+				<c:param name="empID" value="${tempEmp.id}" />
+
+			</c:url>
+
 			<tr>
 				<td>${tempEmp.name}</td>
 				<td>${tempEmp.surname}</td>
 				<td>${tempEmp.department}</td>
 				<td>${tempEmp.salary}</td>
+				<td><input type="button" value="update"
+					onclick="window.location.href='${empUpdateLink}'" /></td>
 			</tr>
 		</c:forEach>
 	</table>
