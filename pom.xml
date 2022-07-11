@@ -52,13 +52,13 @@
     
 
 	
-		<!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver 
+		<!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver for AOP -->
 	<dependency>
 	    <groupId>org.aspectj</groupId>
 	    <artifactId>aspectjweaver</artifactId>
 	    <version>1.9.9.1</version>
 	    
-	</dependency>-->
+	</dependency>
 
 
 	
