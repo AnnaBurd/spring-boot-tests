@@ -11,5 +11,7 @@ public interface MyEmpService {
 	public void saveEmployee(Emp newEmp);
 	
 	public Emp getEmployee(int id);
+	
+	public void deleteEmployee(int id);
 
 }

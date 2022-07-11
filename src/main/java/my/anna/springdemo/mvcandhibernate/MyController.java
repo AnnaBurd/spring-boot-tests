@@ -47,7 +47,7 @@ public class MyController {
 		System.out.println("Saving employee    :" + newEmp+ " " + newEmp.getId());
 		
 		
-		// save or update hibernate method helps underheath
+		// save or update hibernate method helps underneath
 		myEmpService.saveEmployee(newEmp);
 		
 	
@@ -65,6 +65,16 @@ public class MyController {
 		model.addAttribute("newEmpAttr", currEmp);
 		
 		return "emp-details";
+	}
+	
+	@RequestMapping("/deleteEmployee")
+	public String deleteEmp(@RequestParam("empID") int id) {
+		
+		System.out.println("Delete Details called");
+		
+		myEmpService.deleteEmployee(id);
+		
+		return "redirect:/myEmpApp/";		
 	}
 
 }

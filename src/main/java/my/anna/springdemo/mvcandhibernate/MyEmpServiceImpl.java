@@ -35,4 +35,11 @@ public class MyEmpServiceImpl implements MyEmpService {
 		return empDAO.getEmployee(id);
 	}
 
+	@Override
+	@Transactional
+	public void deleteEmployee(int id) {
+		empDAO.deleteEmployee(id);
+		
+	}
+
 }

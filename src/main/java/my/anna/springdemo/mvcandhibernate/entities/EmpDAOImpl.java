@@ -60,4 +60,15 @@ public class EmpDAOImpl implements EmpDAO{
 
 	}
 
+	@Override
+	public void deleteEmployee(int id) {
+		Session session = sessionFactory.getCurrentSession();
+		
+		Query<Emp> query = session.createQuery("delete from Emp where id=:employeeID");
+		query.setParameter("employeeID", id);
+		
+		query.executeUpdate();		
+		
+	}
+
 }

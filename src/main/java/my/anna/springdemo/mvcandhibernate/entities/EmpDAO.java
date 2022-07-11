@@ -10,4 +10,6 @@ public interface EmpDAO {
 
 	public Emp getEmployee(int id);
 
+	public void deleteEmployee(int id);
+
 }
