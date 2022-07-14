@@ -39,5 +39,4 @@ public class Emp {
 		this.department = department;
 		this.salary = salary;
 	}
-	
 }
