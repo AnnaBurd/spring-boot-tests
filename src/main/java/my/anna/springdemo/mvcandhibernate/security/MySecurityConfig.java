@@ -28,8 +28,23 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter{
 //		.withUser(ub.username("olga").password("olga").roles("HR"))
 //		.withUser(ub.username("ii").password("ii").roles("MANAGER", "HR"));
 		
-		// From database
+//		 From database - the db shema default for Spring-
+//		 CREATE TABLE users (
+//		  username varchar(15),
+//		  password varchar(100),
+//		  enabled tinyint(1),
+//		  PRIMARY KEY (username)
+//		) ;
+		
+//		CREATE TABLE authorities (
+//				  username varchar(15),
+//				  authority varchar(25),
+//				  FOREIGN KEY (username) references users(username)
+//				) ;
 		auth.jdbcAuthentication().dataSource(dataSource);
+		
+		// passwords as {bcrypt}$2a$10$vKkli6pOXPWUz/er/3KK5OpG1TVMyDtHGzgvfMS.bAHH0Yv8epRga
+		// authorities as  'ROLE_HR'
 		
 	}
 
