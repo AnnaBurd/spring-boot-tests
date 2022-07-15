@@ -51,6 +51,15 @@
 
 	<input type="button" value="Add new Emp"
 		onclick="window.location.href='addNewEmployee'">
+		
+	<br><br><br>
+	Only for HR:
+	<input type="button" value="for HR"
+		onclick="window.location.href='hr_info'" />
+		
+	Only for Managers:
+	<input type="button" value="for Manager"
+		onclick="window.location.href='manager_info'" />
 
 
 </body>

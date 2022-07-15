@@ -9,13 +9,13 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
-@EnableWebMvc
+//@EnableWebMvc - only one class has @EnableWebMvc annotation
 @Configuration
 public class MyMVCConfig implements WebMvcConfigurer{
 
 	   @Override
 	   public void addViewControllers(ViewControllerRegistry registry) {
-	      registry.addViewController("/").setViewName("index");
+	      registry.addViewController("/").setViewName("index"); // main page
 	   }
 
 	   @Bean
