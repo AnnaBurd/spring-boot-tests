@@ -1,5 +1,8 @@
 package my.anna.springdemo.mvcandhibernate.security;
 
+import javax.sql.DataSource;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -11,15 +14,23 @@ import org.springframework.security.core.userdetails.User.UserBuilder;
 @Configuration
 @EnableWebSecurity
 public class MySecurityConfig extends WebSecurityConfigurerAdapter{
+	
+	@Autowired
+	private DataSource dataSource;
 
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 
-		UserBuilder ub = User.withDefaultPasswordEncoder();
-		auth.inMemoryAuthentication()
-		.withUser(ub.username("anna").password("anna").roles("EMPLOYEE"))
-		.withUser(ub.username("olga").password("olga").roles("HR"))
-		.withUser(ub.username("ii").password("ii").roles("MANAGER", "HR"));
+		// In-memory 
+//		UserBuilder ub = User.withDefaultPasswordEncoder();
+//		auth.inMemoryAuthentication()
+//		.withUser(ub.username("anna").password("anna").roles("EMPLOYEE"))
+//		.withUser(ub.username("olga").password("olga").roles("HR"))
+//		.withUser(ub.username("ii").password("ii").roles("MANAGER", "HR"));
+		
+		// From database
+		auth.jdbcAuthentication().dataSource(dataSource);
+		
 	}
 
 	@Override
