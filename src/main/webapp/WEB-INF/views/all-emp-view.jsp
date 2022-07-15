@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -53,14 +54,18 @@
 		onclick="window.location.href='addNewEmployee'">
 		
 	<br><br><br>
+	<security:authorize access="hasRole('HR')">
 	Only for HR:
+	
 	<input type="button" value="for HR"
 		onclick="window.location.href='hr_info'" />
+	</security:authorize>
 		
+	<security:authorize access="hasRole('MANAGER')">
 	Only for Managers:
 	<input type="button" value="for Manager"
 		onclick="window.location.href='manager_info'" />
-
+	</security:authorize>
 
 </body>
 </html>
