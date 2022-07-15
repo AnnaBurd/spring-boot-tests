@@ -1,4 +1,4 @@
-package my.anna.springdemo.mvcandhibernate.REST;
+package my.anna.springdemo.mvcandhibernate.exceptionHandlers;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

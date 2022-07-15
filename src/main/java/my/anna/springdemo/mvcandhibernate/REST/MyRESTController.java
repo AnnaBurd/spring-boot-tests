@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import my.anna.springdemo.mvcandhibernate.MyEmpService;
 import my.anna.springdemo.mvcandhibernate.entities.Emp;
+import my.anna.springdemo.mvcandhibernate.exceptionHandlers.NoSuchEmpException;
 
 @RestController
 @RequestMapping("/api")
@@ -42,19 +43,7 @@ public class MyRESTController {
 		return emp;
 	}
 	
-	@ExceptionHandler
-	public ResponseEntity<EmpIncorrectID> handleException(NoSuchEmpException e){
-		EmpIncorrectID message = new EmpIncorrectID();
-		message.setInfo(e.getMessage());
-		return new ResponseEntity<>(message, HttpStatus.NOT_FOUND);
-	}
-	
-	@ExceptionHandler
-	public ResponseEntity<EmpIncorrectID> handleException(Exception e){
-		EmpIncorrectID message = new EmpIncorrectID();
-		message.setInfo(e.getMessage());
-		return new ResponseEntity<>(message, HttpStatus.BAD_REQUEST);
-	}
+
 
 
 }
